@@ -1,5 +1,5 @@
 [package]
-name = "entry-point"
+name = "mobile-entry-point"
 version = "0.1.0"
 authors = ["Brainium Studios LLC"]
 edition = "2018"
