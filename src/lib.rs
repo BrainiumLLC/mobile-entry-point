@@ -9,7 +9,7 @@ pub fn entry_point(
     input: proc_macro::TokenStream,
 ) -> proc_macro::TokenStream {
     let func = parse_macro_input!(input as syn::ItemFn);
-    let name = &func.ident;
+    let name = &func.sig.ident;
 
     let expanded = quote! {
         fn stop_unwind<F: FnOnce() -> T, T>(f: F) -> T {
