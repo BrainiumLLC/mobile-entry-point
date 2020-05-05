@@ -22,15 +22,19 @@ pub fn mobile_entry_point(
             }
         }
 
-        #[no_mangle]
-        #[inline(never)]
-        pub extern "C" fn start_app() {
+        fn _start_app() {
             #func
             stop_unwind(|| #name());
         }
 
+        #[no_mangle]
+        #[inline(never)]
+        pub extern "C" fn start_app() {
+            _start_app()
+        }
+
         #[cfg(target_os = "android")]
-        ndk_glue::ndk_glue!(start_app);
+        ndk_glue::ndk_glue!(_start_app);
     };
     //panic!("{}", expanded.to_string());
     expanded.into()
