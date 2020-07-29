@@ -22,7 +22,6 @@ pub fn mobile_entry_point(
             }
         }
 
-        #[cfg_attr(target_os = "android", ndk_glue::main(backtrace))]
         fn _start_app() {
             #func
             stop_unwind(|| #name());
@@ -33,6 +32,9 @@ pub fn mobile_entry_point(
         pub extern "C" fn start_app() {
             _start_app()
         }
+
+        #[cfg(target_os = "android")]
+        ndk_glue::ndk_glue!(_start_app);
     };
     //panic!("{}", expanded.to_string());
     expanded.into()
