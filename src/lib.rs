@@ -25,16 +25,13 @@ pub fn mobile_entry_point(
         #[cfg_attr(target_os = "android", ndk_glue::main(
             backtrace = "on",
             ndk_glue = "ndk_glue",
-            logger(
-                android_logger = "android_logger",
-                log = "log",
-            ),
         ))]
         fn _start_app() {
             #func
             stop_unwind(|| #name());
         }
 
+        #[cfg(not(target_os = "android"))]
         #[no_mangle]
         #[inline(never)]
         pub extern "C" fn start_app() {
