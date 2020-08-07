@@ -1,14 +1,20 @@
 [package]
 name = "mobile-entry-point"
 version = "0.1.0"
-authors = ["Brainium Studios LLC"]
+authors = ["Francesca Lovebloom <francesca@brainiumstudios.com>"]
 edition = "2018"
+description = "Generate app entry-point boilerplate for iOS & Android!"
+documentation = "https://docs.rs/mobile-entry-point"
+repository = "https://github.com/BrainiumLLC/mobile-entry-point"
+readme = "README.md"
+keywords = ["macro", "mobile", "ios", "android"]
+categories = ["os"]
 license = "Apache-2.0/MIT"
 
 [lib]
 proc-macro = true
 
 [dependencies]
-proc-macro2 = "1.0.10"
-quote = "1.0.3"
-syn = { version = "1.0.17", features = ["full"] }
+proc-macro2 = "1.0.19"
+quote = "1.0.7"
+syn = { version = "1.0.38", features = ["full"] }
