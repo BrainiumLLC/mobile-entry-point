@@ -1,6 +1,6 @@
 [package]
 name = "mobile-entry-point"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Brainium Studios LLC", "Francesca Lovebloom <francesca@brainiumstudios.com>"]
 edition = "2018"
 description = "Generate app entry-point boilerplate for iOS & Android!"
