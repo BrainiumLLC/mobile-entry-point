@@ -22,10 +22,6 @@ pub fn mobile_entry_point(
             }
         }
 
-        #[cfg_attr(target_os = "android", ndk_glue::main(
-            backtrace = "on",
-            ndk_glue = "ndk_glue",
-        ))]
         fn _start_app() {
             #func
             stop_unwind(|| #name());
